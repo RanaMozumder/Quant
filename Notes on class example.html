@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body style="font-family: verdana, sans-serif;font-size: 12px;color: #202122;">
+<p>Navigated to:</p>
+<p><a href="https://www.tn.gov/health/cedep/ncov/data/downloadable-datasets.html">https://www.tn.gov/health/cedep/ncov/data/downloadable-datasets.html</a></p>
+<p>downloaded the Daily Case Information data set on COVID-19 cases in State of Tennessee (Excel spreadsheet attached).</p>
+<p>At Matlab command line:</p>
+<p>D=[];</p>
+<p>Then double click on "D" variable in the Workspace window to open up a (blank) Matlab spreadsheet for that variable.</p>
+<p>Copied column P from the Tennessee data spreadsheet, skipping the first row.</p>
+<p>Pasted the data into Matlab variable D using the "Paste Excel Data" function after right clicking on the first element.</p>
+<p>Then, from the command line:</p>
+<p>plot(D)<br>D=D(906:-1:1);<br>plot(D)<br>grid<br>t=[1:906];<br>A=[ones(906,1),t'];<br>c=inv(A'*A)*A'*D<br>plot(t,D,'o',t,c(1)+c(2)*t)<br>grid</p>
+<p>These command accomplished the following:</p>
+<ol>
+<li>plotted Total Deaths data, noticed that it is reverse chronological (decreasing deaths)</li>
+<li>reversed the order of the elements in D</li>
+<li>added a grid to graph</li>
+<li>created an integer variable "t" indicating the days since March 4, 2020</li>
+<li>built A, the matrix of modeling functions</li>
+<li>solved for the best fit model parameters in c, corresponding to simple line</li>
+<li>plotted the data on the same axes as the best fit model</li>
+<li>added a grid</li>
+</ol>
+</body>
+</html>

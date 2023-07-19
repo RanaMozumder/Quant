@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body style="font-family: verdana, sans-serif;font-size: 12px;color: #202122;">
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/?term=piezo1&amp;timeline=expanded">https://pubmed.ncbi.nlm.nih.gov/</a></p>
+<p>Search "Piezo1" and on sidebar that displays "Results by year" click the -&gt;] "download" button</p>
+<p>Open .csv spreadsheet.</p>
+<p>In Matlab, create an empty variable called paperyear. Paste two columns of data into it.</p>
+<p>It's reverse chronological (again) but that is okay.</p>
+<p>x=paperyear(:,1); y=paperyear(:,2);</p>
+<p>plot(x,y,'o')</p>
+<p>c1=polyfit(x,y,1)</p>
+<p>y1=polyval(c1,x);</p>
+<p>c2=polyfit(x,y,2);</p>
+<p>y2=polyval(c2,x);</p>
+<p>c3=polyfit(x,y,3);</p>
+<p>y3=polyval(c3,x);</p>
+<p>plot(x,y,'o',x,y1,x,y2,x,y3)</p>
+<p>legend('data','n=1','n=2','n=3')</p>
+<p>grid</p>
+<p>recall that R^2 = 1 - SSE/SST</p>
+<p>ymean=mean(y);</p>
+<p>SST=norm(y-ymean)^2</p>
+<p>ym=y1;</p>
+<p>SSE=norm(y-ym)^2</p>
+<p>1-SSE/SST</p>
+<p>ym=y2;</p>
+<p>repeat</p>
+<p>ym=y3</p>
+</body>
+</html>
